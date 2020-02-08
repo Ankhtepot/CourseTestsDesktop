@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: lightblue;
+    margin: 0;
+    box-shadow: 3px 3px 6px 3px rgba(136,174,181,0.5);
+    display: inline-block;
+    min-width: 300px;
+}
+
+.container:hover {
+    background-color: #34ebe1;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 5px rgba(9,207,242,1);
+
+}
+
+p {
+    text-align: left;
+    text-overflow: ellipsis;
+    margin: 0.1rem;
+}
+

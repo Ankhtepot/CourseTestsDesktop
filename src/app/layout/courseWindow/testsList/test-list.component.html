@@ -1,0 +1,14 @@
+<div *ngIf="selectedTest === null" class="container">
+    <div *ngIf="tests !== null || tests.length > 0"></div>
+    <div *ngFor="let test of tests; let testIndex = index" class="test-detail-wrapper">
+        <app-test-detail [test]="test" [testIndex]="testIndex"></app-test-detail>
+    </div>
+</div>
+<div *ngIf="selectedTest === null" class="select-test-prompt">
+    <p>Vyber Požadovaný Test</p>
+</div>
+<div *ngIf="selectedTest !== null" class="back-to-test-selection">
+    <button class="btn" (click)="deselectTest()"><- Zpět na výběr testů</button>
+</div>
+
+<!-- <p>test list</p> -->

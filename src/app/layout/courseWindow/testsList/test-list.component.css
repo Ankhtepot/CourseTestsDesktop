@@ -1,0 +1,32 @@
+app-test-detail {
+    margin: 0.1rem 0.5rem;
+}
+
+.test-detail-wrapper {
+    margin: 0.2rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.select-test-prompt {
+    margin-top: 2rem;
+    background-color: aqua;
+    text-align: center;
+  }
+
+  .btn {
+    cursor: pointer;
+    border: 3px blue solid;
+    border-radius: 5%;
+    transition: all 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 2rem;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}

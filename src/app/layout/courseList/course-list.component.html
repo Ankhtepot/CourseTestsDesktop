@@ -1,0 +1,9 @@
+<div *ngIf="selectedCourseId === null">
+    <div *ngFor="let course of courses" class="container">
+        <app-course [course]=course></app-course>
+    </div>
+</div>
+<div *ngIf="selectedCourseId !== null">
+    <button class="btn" (click)="deselectedCourseId()"><- Zpět na výběr kurzů</button>
+    <h3 class="course-title">{{selectedCourseTitle}}</h3>
+</div>

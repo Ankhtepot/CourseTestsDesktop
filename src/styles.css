@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+html {
+    background: url("./app/resources/img/testing.jpg") no-repeat center center/cover;
+    height: 150vh;
+}
+
+.flex-v {
+  display: flex;
+  flex-flow: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-h {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-m {
+  width: 20px;
+  height: 20px;
+}

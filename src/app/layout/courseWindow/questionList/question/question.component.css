@@ -1,0 +1,39 @@
+ p {
+    margin: 0 0.2rem;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    background-color: lightgray;
+    box-shadow: 3px 3px 6px 3px rgba(136,174,181,0.5);
+}
+
+p:hover {
+    background-color: #34ebe1;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 5px rgba(9,207,242,1);
+}
+
+.question-selected {
+    background-color: lightgreen;
+}
+
+.question-correct {
+    background-color: lightgreen;
+    box-shadow: 0px 0px 5px 5px #1de034;
+}
+
+.question-incorrect {
+    background-color: mistyrose;
+    box-shadow: 0px 0px 5px 5px #e8697e;
+}
+
+.question-submitted {
+    background-color: lightgreen;
+    box-shadow: 0px 0px 5px 5px lightgreen;
+}
+
+.question-checked {
+    background-color: gray;
+    color: #f3f3f3;
+}

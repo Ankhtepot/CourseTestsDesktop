@@ -1,0 +1,6 @@
+<h2  class="test-title">{{selectedTest.name}}</h2>
+<div class="container">
+    <div *ngFor="let question of questions; let qIndex = index" class="question">
+        <app-question [question]="question" [selectedQuestionId]="qIndex"></app-question>
+    </div>
+</div>

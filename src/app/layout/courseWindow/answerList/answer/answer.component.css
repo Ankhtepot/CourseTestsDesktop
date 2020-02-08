@@ -1,0 +1,9 @@
+.flex-v {
+    height: 2rem;
+    justify-content: left;
+    margin: 0.1rem 0.3rem;
+}
+
+.answer-text {
+    margin: 0 0.5rem;
+}

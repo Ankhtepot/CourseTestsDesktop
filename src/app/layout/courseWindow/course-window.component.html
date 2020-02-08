@@ -1,0 +1,11 @@
+<p *ngIf="selectedCourseId === null" class="select-course-prompt">
+  Vyber kurz výše
+</p>
+<div *ngIf="selectedCourseId !== null">
+  <h3 class="course-title">{{selectedCourse.title}}</h3>
+  <app-test-list></app-test-list>
+  <div *ngIf="selectedTest !== null">
+    <app-question-list [selectedTest]=selectedTest></app-question-list> 
+    <app-answer-list></app-answer-list>
+  </div>
+</div>

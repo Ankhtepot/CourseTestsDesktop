@@ -1,0 +1,10 @@
+.container {
+    padding-bottom: 3rem;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.flex-h {
+    align-items: flex-start;
+    align-self: center;
+}

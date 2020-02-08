@@ -1,0 +1,9 @@
+<p [ngClass]="{
+    'question-selected' : questionStates.SELECTED === state,
+    'question-correct' : questionStates.CORRECT === state,
+    'question-incorrect' : questionStates.INCORRECT === state,
+    'question-submitted' : questionStates.SUBMITTED === state,
+    'question-checked' : questionStates.CHECKED === state
+}"
+(click)="onClick()"
+>{{selectedQuestionId + 1}}</p>

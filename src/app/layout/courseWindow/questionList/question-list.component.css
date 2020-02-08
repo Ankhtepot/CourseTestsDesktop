@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+h2 {
+    color: #4287f5
+}

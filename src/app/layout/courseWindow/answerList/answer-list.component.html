@@ -1,0 +1,7 @@
+<div *ngIf="selectedQuestion !== null" class="container">
+    <div class="flex-h">
+        <div *ngFor="let answer of answers; let aIndex = index;">
+            <app-answer [answer]="answer" [answerIndex]=aIndex></app-answer>
+        </div>
+    </div>
+</div>
