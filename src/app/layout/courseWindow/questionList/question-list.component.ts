@@ -23,14 +23,14 @@ export class QuestionListComponent implements OnInit {
     });
 
     this.testService.notifyAllAnswersAnswered.subscribe(
-      (allQuestionsAnswered) => this.questionsAnswered = allQuestionsAnswered)
+      (allQuestionsAnswered) => this.questionsAnswered = allQuestionsAnswered);
 
     this.testService.notifyAnswersEditableChange.subscribe(
       editable => this.questionsEditable = editable);
 
     this.testService.notifySelectedTestChange.subscribe(
       test => this.selectedTest = test
-    )
+    );
 
     const selectedTest: Test = this.testService.getSelectedTest();
     if (selectedTest !== null) {

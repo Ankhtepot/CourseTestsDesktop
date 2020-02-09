@@ -13,7 +13,7 @@ export class QuestionComponent implements OnInit
     @Input() question: Question;
     @Input() questionIndex: number;
     state: QuestionStates = QuestionStates.BASE;
-    answersState: QuestionStates = QuestionStates.UNCHECKED
+    answersState: QuestionStates = QuestionStates.UNCHECKED;
     public questionStates = QuestionStates;
 
     constructor(private testService: TestService) {}
@@ -46,7 +46,7 @@ export class QuestionComponent implements OnInit
             if (this.question === result.question) {
               this.answersState = result.correct
                 ? this.questionStates.CORRECT
-                : this.questionStates.INCORRECT
+                : this.questionStates.INCORRECT;
               this.state = this.answersState;
             }
           }

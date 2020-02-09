@@ -118,7 +118,7 @@ export class TestService {
       if(this.selectedTest !== null) {
         this.testInAnsweringMode = false;
         this.setAnswersEditable(false);
-        this.selectedTest.questions.forEach(question => this.checkQuestionAnswers(question))
+        this.selectedTest.questions.forEach(question => this.checkQuestionAnswers(question));
         this.notifyTestValidated.emit();
       }
       this.notifySelectedQuestionChange.emit(this.selectedQuestion);
