@@ -2,7 +2,7 @@ import { Answer } from './answer.model';
 
 export class Question {
     constructor(
-        public question: string,
+        public Text: string,
         public questionType: string,
         public answers: Answer[]
     ) {}

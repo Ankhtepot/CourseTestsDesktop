@@ -15,13 +15,18 @@ export class TestService {
     notifySelectedTestChange = new EventEmitter<Test>();
     notifySelectedQuestionChange = new EventEmitter<Question>();
     notifyAnswerCheck = new EventEmitter<Question>();
+    notifyAllAnswersAnswered = new EventEmitter<boolean>();
 
     constructor(private coursesService: CoursesService) {
-      this.coursesService.selectedCourseIdChanged.subscribe(() => this.clearData());
+      this.coursesService.selectedCourseIdChanged.subscribe(() => this.clearData()
+      );
     }
 
     clearData() {
-      this.tests =  this.coursesService.getSelectedCourseTests();
+      this.tests = null;
+      if(this.coursesService.getSelectedCourse() !== null) {
+        this.tests = this.coursesService.getSelectedCourseTests()
+      }
       this.selectedTest = null;
       this.selectedQuestion = null;
       this.notifySelectedTestChange.emit(this.selectedTest);
@@ -54,5 +59,36 @@ export class TestService {
         this.selectedQuestion.answers[answerIndex].isChecked = checked;
         this.notifyAnswerCheck.emit(this.selectedQuestion);
       }
+
+      this.notifyAllAnswersAnswered.emit(this.validateAllAnswersAnswered());
+    }
+
+    validateAllAnswersAnswered() {
+      let allAnswersAnswered = true;
+      this.selectedTest.questions.forEach(question => {
+        if (!this.validateQuestionCheckState(question)) {
+          allAnswersAnswered = false;
+          return;
+        }
+      });
+
+      return allAnswersAnswered;
+    }
+
+    checkForValidAnswers() {
+
+    }
+
+    validateQuestionCheckState(question: Question) {
+      let anyAnswerChecked = false;
+
+      question.answers.forEach(answer => {
+        if (answer.isChecked) {
+          anyAnswerChecked = true;
+          return;
+        }
+      });
+
+      return anyAnswerChecked;
     }
 }

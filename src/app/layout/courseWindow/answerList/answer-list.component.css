@@ -1,3 +1,8 @@
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5% 5% 25% 25%;
+}
+
 .container {
     padding-bottom: 3rem;
     width: 50%;
@@ -7,4 +12,10 @@
 .flex-h {
     align-items: flex-start;
     align-self: center;
+}
+
+.question-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
 }

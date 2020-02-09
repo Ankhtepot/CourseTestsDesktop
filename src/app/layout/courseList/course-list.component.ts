@@ -26,7 +26,7 @@ export class CourseListComponent implements OnInit {
         });
     }
 
-    deselectedCourseId() {
+    deselectCourse() {
         this.coursesService.setSelectedCourseId(null);
     }
 }

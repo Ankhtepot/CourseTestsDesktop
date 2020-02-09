@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from "@angular/core";
-import { Question } from "../../../../shared/question.model";
-import { TestService } from "../../test.service";
+import { Component, Input, OnInit } from '@angular/core';
+import { Question } from '../../../../shared/question.model';
+import { TestService } from '../../test.service';
 import { QuestionStates } from './questionStates.enum';
 
 @Component({
@@ -11,37 +11,36 @@ import { QuestionStates } from './questionStates.enum';
 export class QuestionComponent implements OnInit
 {
     @Input() question: Question;
-    @Input() selectedQuestionId: number;
+    @Input() questionIndex: number;
     @Input() state: QuestionStates = QuestionStates.BASE;
     answersState: QuestionStates = QuestionStates.UNCHECKED
     public questionStates = QuestionStates;
 
     constructor(private testService: TestService) {}
 
-    ngOnInit()
-    {
-        if(this.selectedQuestionId === 0)
-        {
+    ngOnInit() {
+        if (this.questionIndex === 0) {
            this.onClick();
         }
 
         this.testService.notifySelectedQuestionChange.subscribe((question: Question) => {
-            if(question !== this.question)
-            {
-                this.state = this.questionStates.BASE;
+            if (question !== this.question) {
+                this.state = this.answersState;
             }
-        })
+        });
 
         this.testService.notifyAnswerCheck.subscribe((question: Question) => {
-            if(this.question === question)
-            {
+            if (this.question === question) {
+              if(this.testService.validateQuestionCheckState(this.question)) {
                 this.answersState = this.questionStates.CHECKED;
+              } else {
+                this.answersState = this.questionStates.BASE;
+              }
             }
         });
     }
 
-    onClick()
-    {
+    onClick() {
          this.state = this.questionStates.SELECTED;
          this.testService.setSelectedQuestion(this.question);
     }

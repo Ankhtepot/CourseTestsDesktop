@@ -8,3 +8,7 @@
   color: #4287f5;
   margin: .5rem auto;
 }
+
+app-question-list {
+  margin-bottom: 1rem;
+}

@@ -1,6 +1,9 @@
-<h2  class="test-title">{{selectedTest.name}}</h2>
+<div class="flex-v">
+  <h2 class="test-title">{{selectedTest.name}}</h2>
+  <button class="base-button" [disabled]="!questionsAnswered">Zkontrolovat Test</button>
+</div>
 <div class="container">
     <div *ngFor="let question of questions; let qIndex = index" class="question">
-        <app-question [question]="question" [selectedQuestionId]="qIndex"></app-question>
+        <app-question [question]="question" [questionIndex]="qIndex"></app-question>
     </div>
 </div>

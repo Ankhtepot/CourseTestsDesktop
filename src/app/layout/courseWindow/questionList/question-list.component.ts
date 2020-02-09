@@ -12,10 +12,18 @@ export class QuestionListComponent implements OnInit {
   @Input() selectedTest: Test = null;
   questions: Question[] = null;
   selectedQuestion: Question = null;
+  questionsAnswered = false;
 
   constructor(private testService: TestService) {}
 
   ngOnInit() {
+    this.testService.notifySelectedQuestionChange.subscribe((question) => {
+      this.selectedQuestion = question;
+    });
+
+    this.testService.notifyAllAnswersAnswered.subscribe(
+      (allQuestionsAnswered) => this.questionsAnswered = allQuestionsAnswered)
+
     const selectedTest: Test = this.testService.getSelectedTest();
     if (selectedTest !== null) {
         this.selectedTest = selectedTest;

@@ -11,29 +11,31 @@
 p:hover {
     background-color: #34ebe1;
     cursor: pointer;
-    box-shadow: 0px 0px 5px 5px rgba(9,207,242,1);
+    box-shadow: 0 0 5px 5px rgba(9,207,242,1);
 }
 
 .question-selected {
     background-color: lightgreen;
+    box-shadow: 0 0 5px 5px darkseagreen;
 }
 
 .question-correct {
     background-color: lightgreen;
-    box-shadow: 0px 0px 5px 5px #1de034;
+    box-shadow: 0 0 5px 5px #1de034;
 }
 
 .question-incorrect {
     background-color: mistyrose;
-    box-shadow: 0px 0px 5px 5px #e8697e;
+    box-shadow: 0 0 5px 5px #e8697e;
 }
 
 .question-submitted {
     background-color: lightgreen;
-    box-shadow: 0px 0px 5px 5px lightgreen;
+    box-shadow: 0 0 5px 5px lightgreen;
 }
 
 .question-checked {
     background-color: gray;
     color: #f3f3f3;
+    box-shadow: 0 0 5px 5px lightblue;
 }

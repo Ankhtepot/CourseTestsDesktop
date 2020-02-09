@@ -34,3 +34,7 @@ html {
   width: 20px;
   height: 20px;
 }
+
+.base-button {
+  margin: 0 1rem;
+}

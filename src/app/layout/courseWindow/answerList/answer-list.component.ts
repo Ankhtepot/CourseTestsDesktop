@@ -11,6 +11,7 @@ import { Answer } from '../../../shared/answer.model';
 export class AnswerListComponent implements OnInit {
     selectedQuestion: Question = null;
     answers: Answer[] = null;
+    allAnswersProcessed = false;
 
     constructor(private testService: TestService) {}
 

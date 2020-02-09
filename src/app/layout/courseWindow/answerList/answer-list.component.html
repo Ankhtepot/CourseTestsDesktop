@@ -1,7 +1,13 @@
-<div *ngIf="selectedQuestion !== null" class="container">
+<div class="wrapper">
+   <p *ngIf="selectedQuestion !== null" class="question-title"
+     >{{selectedQuestion.Text}}
+   </p>
+
+  <div *ngIf="selectedQuestion !== null" class="container">
     <div class="flex-h">
-        <div *ngFor="let answer of answers; let aIndex = index;">
-            <app-answer [answer]="answer" [answerIndex]=aIndex></app-answer>
-        </div>
+      <div *ngFor="let answer of answers; let aIndex = index;">
+        <app-answer [answer]="answer" [answerIndex]=aIndex></app-answer>
+      </div>
     </div>
+  </div>
 </div>
