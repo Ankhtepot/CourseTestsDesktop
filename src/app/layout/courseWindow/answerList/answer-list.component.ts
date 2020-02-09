@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from '../../../shared/question.model';
+import { Question } from '../../../shared/model/question.model';
 import { TestService } from '../test.service';
-import { Answer } from '../../../shared/answer.model';
+import {Answer} from '../../../shared/model/answer.model';
 
 @Component({
     selector: 'app-answer-list',
@@ -11,7 +11,7 @@ import { Answer } from '../../../shared/answer.model';
 export class AnswerListComponent implements OnInit {
     selectedQuestion: Question = null;
     answers: Answer[] = null;
-    allAnswersProcessed = false;
+    allAnswersValidated = false;
 
     constructor(private testService: TestService) {}
 
@@ -24,5 +24,27 @@ export class AnswerListComponent implements OnInit {
                 this.answers = null;
             }
         });
+
+        this.testService.notifyTestValidated.subscribe(
+          () => this.allAnswersValidated = true)
     }
+
+  isSelectedQuestionFirst() {
+    return this.testService.getQuestionIndex(this.selectedQuestion) === 0;
+  }
+
+  isSelectedQuestionLast() {
+    return this.testService.getQuestionIndex(this.selectedQuestion)
+      === this.testService.getSelectedTest().questions.length - 1;
+  }
+
+  fetchPreviousQuestion() {
+      this.testService.setSelectedQuestionByIndex(
+        this.testService.getQuestionIndex(this.selectedQuestion) - 1)
+  }
+
+  fetchNextQuestion() {
+    this.testService.setSelectedQuestionByIndex(
+      this.testService.getQuestionIndex(this.selectedQuestion) + 1)
+  }
 }

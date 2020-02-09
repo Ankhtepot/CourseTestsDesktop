@@ -1,7 +1,11 @@
-<div class="flex-v">
-    <input 
-        type="checkbox" 
-        [checked]=checked 
+<div id="answer_component" class="flex-v" [ngClass]="{
+'answer-correct' : answerValidationState.CORRECT === state,
+'answer-incorrect' : answerValidationState.INCORRECT === state
+}">
+    <input
+        type="checkbox"
+        [checked]=checked
+        [disabled]="!editable"
         (change)="checkboxChanged($event)"
         class="checkbox-m">
     <p class="answer-text">{{answer.text}}</p>

@@ -1,9 +1,20 @@
 <div class="flex-v">
   <h2 class="test-title">{{selectedTest.name}}</h2>
-  <button class="base-button" [disabled]="!questionsAnswered">Zkontrolovat Test</button>
+  <button class="btn-big" (click)="deselectTest()"><- Vyber Test</button>
 </div>
+
 <div class="container">
     <div *ngFor="let question of questions; let qIndex = index" class="question">
         <app-question [question]="question" [questionIndex]="qIndex"></app-question>
     </div>
+</div>
+
+<div class="flex-v test-navigation">
+  <button
+    class="base-button"
+    [disabled]="!questionsAnswered || !questionsEditable"
+    (click)="checkUserAnswers()">Zkontrolovat Test</button>
+  <div class="img-btn-toolbar tooltip" (click)="reloadTest()">
+    <div class="tooltiptext" (click)="reloadTest()">Opakuj Test</div>
+  </div>
 </div>

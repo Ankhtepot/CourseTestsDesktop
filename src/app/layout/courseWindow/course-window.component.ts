@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { CoursesService } from "../../courses.service";
-import { Course } from "../../shared/course.model";
+import { Course } from "../../shared/model/course.model";
 import { TestService } from "./test.service";
-import { Test } from "../../shared/test.model";
+import { Test } from "../../shared/model/test.model";
 
 @Component({
   selector: "app-course-window",
@@ -15,7 +15,7 @@ export class CourseWindowComponent implements OnInit
     selectedCourse: Course = null;
     selectedTest: Test = null;
 
-    constructor(private coursesService: CoursesService, private testService: TestService) 
+    constructor(private coursesService: CoursesService, private testService: TestService)
     {}
 
     ngOnInit()
@@ -31,4 +31,8 @@ export class CourseWindowComponent implements OnInit
             // console.log(this.selectedTest);
         });
     }
+
+  deselectCourse() {
+    this.coursesService.setSelectedCourseId(null);
+  }
 }

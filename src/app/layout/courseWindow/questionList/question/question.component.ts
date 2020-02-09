@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Question } from '../../../../shared/question.model';
+import { Question } from '../../../../shared/model/question.model';
 import { TestService } from '../../test.service';
 import { QuestionStates } from './questionStates.enum';
 
@@ -12,7 +12,7 @@ export class QuestionComponent implements OnInit
 {
     @Input() question: Question;
     @Input() questionIndex: number;
-    @Input() state: QuestionStates = QuestionStates.BASE;
+    state: QuestionStates = QuestionStates.BASE;
     answersState: QuestionStates = QuestionStates.UNCHECKED
     public questionStates = QuestionStates;
 
@@ -26,6 +26,8 @@ export class QuestionComponent implements OnInit
         this.testService.notifySelectedQuestionChange.subscribe((question: Question) => {
             if (question !== this.question) {
                 this.state = this.answersState;
+            } else {
+              this.state = this.questionStates.SELECTED;
             }
         });
 
@@ -38,6 +40,17 @@ export class QuestionComponent implements OnInit
               }
             }
         });
+
+        this.testService.notifyQuestionValidated.subscribe(
+          (result) => {
+            if (this.question === result.question) {
+              this.answersState = result.correct
+                ? this.questionStates.CORRECT
+                : this.questionStates.INCORRECT
+              this.state = this.answersState;
+            }
+          }
+        )
     }
 
     onClick() {

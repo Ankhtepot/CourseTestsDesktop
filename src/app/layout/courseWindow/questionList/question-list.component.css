@@ -10,3 +10,11 @@
 h2 {
     color: #4287f5
 }
+
+.test-navigation {
+  margin: 0.5rem 0;
+}
+
+.img-btn-toolbar {
+  background: url("../../../resources/img/refresh.png") no-repeat center center/cover;
+}

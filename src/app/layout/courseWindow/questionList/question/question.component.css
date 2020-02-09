@@ -39,3 +39,13 @@ p:hover {
     color: #f3f3f3;
     box-shadow: 0 0 5px 5px lightblue;
 }
+
+.question-selected-incorrect {
+  background-color: orangered;
+  box-shadow: 0 0 5px 5px #e8697e;
+}
+
+.question-selected-correct {
+  background-color: yellow;
+  box-shadow: 0 0 5px 5px #1de034;
+}

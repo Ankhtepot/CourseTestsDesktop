@@ -1,9 +1,18 @@
 .flex-v {
     height: 2rem;
+    width: 500px;
     justify-content: left;
     margin: 0.1rem 0.3rem;
 }
 
 .answer-text {
     margin: 0 0.5rem;
+}
+
+.answer-correct {
+  background: lightgreen;
+}
+
+.answer-incorrect {
+  background: mistyrose;
 }

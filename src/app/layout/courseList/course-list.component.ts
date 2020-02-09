@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Course } from '../../shared/course.model';
+import { Course } from '../../shared/model/course.model';
 import { CoursesService } from '../../courses.service';
 
 @Component({
@@ -18,15 +18,10 @@ export class CourseListComponent implements OnInit {
         this.courses = this.coursesService.getCourses();
 
         this.coursesService.selectedCourseIdChanged.subscribe((selectedCourseId) => {
-            console.log('course-list: selectedCourseIdChanged received');
             this.selectedCourseId = selectedCourseId;
             if(selectedCourseId !== null) {
               this.selectedCourseTitle = this.coursesService.getSelectedCourse().title;
             }
         });
-    }
-
-    deselectCourse() {
-        this.coursesService.setSelectedCourseId(null);
     }
 }

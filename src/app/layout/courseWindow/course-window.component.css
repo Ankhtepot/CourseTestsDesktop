@@ -6,7 +6,7 @@
 .course-title {
   font-size: 2.5rem;
   color: #4287f5;
-  margin: .5rem auto;
+  margin: .5rem 1rem;
 }
 
 app-question-list {

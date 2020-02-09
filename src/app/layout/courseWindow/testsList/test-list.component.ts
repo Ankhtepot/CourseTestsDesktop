@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Test } from '../../../shared/test.model';
+import { Test } from '../../../shared/model/test.model';
 import { TestService } from '../test.service';
 import { CoursesService } from '../../../courses.service';
 
@@ -21,9 +21,5 @@ export class TestListComponent implements OnInit {
         this.testService.notifySelectedTestChange.subscribe((selectedTest) => {
             this.selectedTest = selectedTest;
         });
-    }
-
-    deselectTest() {
-        this.testService.clearData();
     }
 }

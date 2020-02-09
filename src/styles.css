@@ -37,4 +37,65 @@ html {
 
 .base-button {
   margin: 0 1rem;
+  cursor: pointer;
+}
+
+.base-button:disabled {
+  cursor: auto;
+}
+
+.btn-big {
+  cursor: pointer;
+  border: 3px blue solid;
+  border-radius: 5%;
+  transition: all 0.3s;
+  font-weight: bold;
+  font-size: 1rem;
+  height: 2rem;
+  margin: 0 1rem;
+}
+
+.btn-big:hover {
+  transform: scale(1.1);
+}
+
+.img-btn-toolbar {
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.img-btn-toolbar:hover {
+  transform: scale(1.2);
+  border: #4287f5;
+}
+
+/* **************************** */
+/*--------- Tooltip ----------- */
+/* **************************** */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-2rem);
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
