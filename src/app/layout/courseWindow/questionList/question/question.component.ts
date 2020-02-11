@@ -13,7 +13,7 @@ export class QuestionComponent implements OnInit
     @Input() question: Question;
     @Input() questionIndex: number;
     state: QuestionStates = QuestionStates.BASE;
-    answersState: QuestionStates = QuestionStates.UNCHECKED;
+    answersState: QuestionStates = QuestionStates.BASE;
     public questionStates = QuestionStates;
 
     constructor(private testService: TestService) {}

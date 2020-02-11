@@ -2,13 +2,13 @@
   Vyber kurz výše
 </p>
 <div *ngIf="selectedCourseId !== null">
-  <div class="flex-v">
+  <div class="flex-h">
     <h3 class="course-title">{{selectedCourse.title}}</h3>
     <button class="btn-big" (click)="deselectCourse()"><- Vyber Kurz</button>
   </div>
   <app-test-list></app-test-list>
   <div *ngIf="selectedTest !== null">
-    <app-question-list [selectedTest]=selectedTest></app-question-list>
+    <app-question-list [selectedTest]="selectedTest"></app-question-list>
     <app-answer-list></app-answer-list>
   </div>
 </div>

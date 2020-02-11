@@ -14,10 +14,10 @@ p:hover {
     box-shadow: 0 0 5px 5px rgba(9,207,242,1);
 }
 
-.question-selected {
-    background-color: lightgreen;
+/* .question-selected {
+    background-color: #f3f3f3;
     box-shadow: 0 0 5px 5px darkseagreen;
-}
+} */
 
 .question-correct {
     background-color: lightgreen;
@@ -29,10 +29,10 @@ p:hover {
     box-shadow: 0 0 5px 5px #e8697e;
 }
 
-.question-submitted {
+/* .question-submitted {
     background-color: lightgreen;
     box-shadow: 0 0 5px 5px lightgreen;
-}
+} */
 
 .question-checked {
     background-color: gray;
@@ -48,4 +48,14 @@ p:hover {
 .question-selected-correct {
   background-color: yellow;
   box-shadow: 0 0 5px 5px #1de034;
+}
+
+.question-selected-base {
+    background-color: #f3f3f3;
+}
+
+.question-selected-checked {
+    background-color: #333333;
+    color: white;
+    box-shadow: 0 0 5px 5px lightgreen;
 }

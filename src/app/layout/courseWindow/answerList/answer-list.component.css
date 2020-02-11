@@ -3,15 +3,11 @@
   border-radius: 5% 5% 25% 25%;
 }
 
-.container {
-    /*padding-bottom: 3rem;*/
-    width: 50%;
-    margin: 0 auto;
-}
-
-.flex-h {
+.flex-v {
     align-items: flex-start;
     align-self: center;
+    text-align: center;
+    padding: 0 20%;
 }
 
 .question-title {
@@ -23,4 +19,15 @@
 
 button {
   margin: 0.5rem 1rem;
+}
+
+@media(max-width: 800px) {
+  .flex-v {
+    padding: 0;
+    align-items: center;
+  }
+
+  .wrapper {
+    border-radius: 0;
+  }
 }

@@ -1,37 +1,48 @@
 <div class="wrapper">
-   <p *ngIf="selectedQuestion !== null" class="question-title"
-     >{{selectedQuestion.Text}}
-   </p>
-  <div class="flex-v">
+  <p *ngIf="selectedQuestion !== null" class="question-title">
+    {{selectedQuestion.Text}}
+  </p>
+  <div class="flex-h">
     <button
       class="base-button"
       [disabled]="isSelectedQuestionFirst()"
-      (click)="fetchPreviousQuestion()">Předchozí otázka</button>
+      (click)="fetchPreviousQuestion()"
+    >
+      Předchozí otázka
+    </button>
     <button
       class="base-button"
       [disabled]="isSelectedQuestionLast()"
-      (click)="fetchNextQuestion()">Další otázka</button>
+      (click)="fetchNextQuestion()"
+    >
+      Další otázka
+    </button>
   </div>
 
-  <div *ngIf="selectedQuestion !== null" class="container">
-    <div class="flex-h">
+  <div *ngIf="selectedQuestion !== null" class="flex-v">
       <div *ngFor="let answer of answers; let aIndex = index;">
         <app-answer
           [answer]="answer"
-          [answerIndex]=aIndex
-          [question]="selectedQuestion"></app-answer>
-      </div>
+          [answerIndex]="aIndex"
+          [question]="selectedQuestion"
+        ></app-answer>
     </div>
   </div>
 
-  <div class="flex-v">
+  <div class="flex-h">
     <button
       class="base-button"
       [disabled]="isSelectedQuestionFirst()"
-      (click)="fetchPreviousQuestion()">Předchozí otázka</button>
+      (click)="fetchPreviousQuestion()"
+    >
+      Předchozí otázka
+    </button>
     <button
       class="base-button"
       [disabled]="isSelectedQuestionLast()"
-      (click)="fetchNextQuestion()">Další otázka</button>
+      (click)="fetchNextQuestion()"
+    >
+      Další otázka
+    </button>
   </div>
 </div>

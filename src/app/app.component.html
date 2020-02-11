@@ -1,3 +1,10 @@
 <div>
+  <app-toolbar></app-toolbar>
+  <div class="flex-h">
+    <div class="app-title"></div>
+  </div>
+  <p *ngIf="!coursesLoaded" id="choose-course_prompt" class="tooltip">Vyber kurz výše
+      <span class="tooltiptext">^</span>
+  </p>
   <app-layout></app-layout>
 </div>
