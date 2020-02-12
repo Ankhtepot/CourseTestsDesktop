@@ -20,6 +20,7 @@ export class CoursesService {
   }
 
   loadCoursesForGroup(groupName: string) {
+    this.courses = null;
     this.courses = this.coursesProvider.loadCoursesForGroup(groupName);
 
     if (this.courses === null || this.courses.length <= 0) {

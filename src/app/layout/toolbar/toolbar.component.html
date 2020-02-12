@@ -1,8 +1,18 @@
-<div class="flex-h">
-  <label for="userGroup">Vyber skupinu:&nbsp;</label>
-  <input
-    type="text"
-    id="userGroup"
-    (keyup.enter)="userGroupConfirmed($event)"
-  />
+<div id="toolbar" class="flex-h">
+  <div class="flex-h user-group__input">
+    <label for="userGroup">Vyber skupinu:&nbsp;</label>
+    <input
+      type="text"
+      id="userGroup"
+      (keyup.enter)="userGroupConfirmed($event)"
+    />
+  </div>
+  <div *ngIf="!coursesLoaded && !firstLoaded" class="flex-h courses-loaded-status">
+    <div class="img-toolbar courses-not-found"></div>
+    <p>Skupina nenalezena</p>
+  </div>
+  <div *ngIf="coursesLoaded && !firstLoaded" class="flex-h courses-loaded-status">
+    <div class="img-toolbar courses-found"></div>
+    <p>Skupina nalezena</p>
+  </div>
 </div>

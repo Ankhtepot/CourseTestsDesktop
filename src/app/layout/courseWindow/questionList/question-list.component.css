@@ -7,7 +7,7 @@ h2 {
 }
 
 .img-btn-toolbar {
-  background: url('../../../resources/img/refresh.png') no-repeat center center/cover;
+  background: url('../../../resources/img/refresh.png') no-repeat center center/contain;
 }
 
 app-question {
@@ -17,4 +17,13 @@ app-question {
 .question {
   height: 2rem;
   margin-bottom: 1rem;
+}
+
+.base-button {
+  transition: all 0.3s;
+}
+
+.base-button:enabled {
+  transform: scale(1.2);
+  box-shadow: 0 0 2px 2px lawngreen;
 }

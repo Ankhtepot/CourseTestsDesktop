@@ -23,5 +23,13 @@ export class CourseListComponent implements OnInit {
         this.selectedCourseTitle = this.coursesService.getSelectedCourse().title;
       }
     });
+
+    this.coursesService.notifyCoursesLoaded.subscribe(
+      loadedStatus => {
+        if (loadedStatus) {
+          this.courses = this.coursesService.getCourses();
+        }
+      }
+    )
   }
 }
